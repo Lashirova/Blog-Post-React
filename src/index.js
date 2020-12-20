@@ -4,19 +4,23 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-let classProperties = 'blue small-font';
-// const blueColor = 'blue';
-// const smallFont = 'small-font';
-
 const myBlogPost = {
   title: 'My first blog',
-  body: 'lorem ipsum dolor sit amet..'
+  body: 'lorem ipsum dolor sit amet..',
+  published: true
+}
+
+let classProperties;
+if(myBlogPost.published){
+  classProperties= 'green'
+} else {
+  classProperties= 'red'
 }
 
 const blogPost = (
   <div>
     <h1 id="title" className={classProperties}>{myBlogPost.title}</h1>
-    <p></p>
+    <p>{myBlogPost.body}</p>
     <img src="" alt="" />
   </div>
 );
