@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
 import {BlogPost} from './BlogPost';
+import {Greeting, Welcome} from './Greeting';
 import reportWebVitals from './reportWebVitals';
 
+const components = (
+  <div id="parent">
+    <Welcome />
+    <Greeting />
+    <BlogPost />
+  </div>
+)
+
 ReactDOM.render(
-  <BlogPost />,
+  components,
   document.getElementById('root')
 );
 
