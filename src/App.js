@@ -1,5 +1,28 @@
 import './App.css';
 
+const posts = [ 
+  {
+    title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
+    body: 'quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto'
+  },
+  {
+    title: 'qui est esse',
+    body: 'est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla'
+  },
+  {
+    title: 'ea molestias quasi exercitationem repellat qui ipsa sit aut',
+    body: 'et iusto sed quo iure voluptatem occaecati omnis eligendi aut ad voluptatem doloribus vel accusantium quis pariatur molestiae porro eius odio et labore et velit aut'
+  },
+  {
+    title: 'eum et est occaecati',
+    body: 'ullam et saepe reiciendis voluptatem adipisci sit amet autem assumenda provident rerum culpa quis hic commodi nesciunt rem tenetur doloremque ipsam iure quis sunt voluptatem rerum illo velit'
+  },
+  {
+    title: 'nesciunt quas odio',
+    body: 'repudiandae veniam quaerat sunt sed alias aut fugiat sit autem sed est voluptatem omnis possimus esse voluptatibus quis est aut tenetur dolor neque'
+  },
+  
+]
 
 function App() {
   return (
@@ -7,26 +30,14 @@ function App() {
       <h1 className="text-center">Welcome to my Blog</h1>
       
       <section>
-        <article>
-          <h2>Blog Post Title 1</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus repellat error, molestiae natus nesciunt quia soluta enim autem iure illo nam quae iusto. Voluptatem autem dolor, sit molestias consequatur deserunt.</p>
-        </article>
-        <article>
-          <h2>Blog Post Title 2</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus repellat error, molestiae natus nesciunt quia soluta enim autem iure illo nam quae iusto. Voluptatem autem dolor, sit molestias consequatur deserunt.</p>
-        </article>
-        <article>
-          <h2>Blog Post Title 3</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus repellat error, molestiae natus nesciunt quia soluta enim autem iure illo nam quae iusto. Voluptatem autem dolor, sit molestias consequatur deserunt.</p>
-        </article>
-        <article>
-          <h2>Blog Post Title 4</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus repellat error, molestiae natus nesciunt quia soluta enim autem iure illo nam quae iusto. Voluptatem autem dolor, sit molestias consequatur deserunt.</p>
-        </article>
-        <article>
-          <h2>Blog Post Title 5</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus repellat error, molestiae natus nesciunt quia soluta enim autem iure illo nam quae iusto. Voluptatem autem dolor, sit molestias consequatur deserunt.</p>
-        </article>
+        {
+          posts.map((globe) => {
+            return (<article>
+              <h2>{globe.title}</h2>
+              <p>{globe.body}</p>
+            </article>)
+          })
+        }
       </section>
       
     </div>
