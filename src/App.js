@@ -1,4 +1,10 @@
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import Posts from "./components/Posts.js";
 
 const posts = [ 
@@ -29,7 +35,26 @@ function App() {
   return (
     <div>
       <h1 className="text-center">Welcome to my Blog</h1>
-      <Posts blogPosts={posts}/>
+
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+            </ul>
+          </nav>
+
+          {/* A <Switch> looks through its children <Route>s and
+              renders the first one that matches the current URL. */}
+          <Switch>
+            <Route path="/">
+              <Posts blogPosts={posts}/>
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }
