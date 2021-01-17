@@ -33,16 +33,17 @@ class App extends React.Component {
 
   storeBlogPost() {
     const newPost = {
-      id: Date.now(),
       title: this.state.title,
       body: this.state.body
     }
-    const newArray = [...this.state.posts, newPost];
-    this.setState({
-      posts: newArray,
-      title: '',
-      body: ''
-    })
+    BlogPostService.create(newPost);
+    // .then()
+    // const newArray = [...this.state.posts, newPost];
+    // this.setState({
+    //   posts: newArray,
+    //   title: '',
+    //   body: ''
+    // })
   }
 
   componentDidMount() {
