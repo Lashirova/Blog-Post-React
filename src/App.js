@@ -4,12 +4,13 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 import Posts from "./components/Posts.js";
 import CreatePost from "./components/CreatePost.js";
 import PostDetails from "./components/PostDetails";
-import axios from 'axios';
+import BlogPostService from './services/post.service';
 
 class App extends React.Component {
   constructor(props) {
@@ -45,7 +46,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://jsonplaceholder.typicode.com/posts')
+    BlogPostService.getAll()
     .then((res) => this.setState({posts: res.data}));
   }
 
